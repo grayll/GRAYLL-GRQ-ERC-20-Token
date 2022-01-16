@@ -10,5 +10,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Abdul Rauf",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.4.2",
+    "@openzeppelin/truffle-upgrades": "^1.12.0",
+    "@truffle/hdwallet-provider": "^2.0.0",
+    "truffle-plugin-verify": "^0.5.20"
+  }
 }
