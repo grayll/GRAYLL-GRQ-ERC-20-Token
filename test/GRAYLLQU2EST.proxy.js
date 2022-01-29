@@ -20,4 +20,20 @@ describe('GRAYLLQU2EST (proxy)', function () {
     expect(await grqv1.name()).to.equal('GRAYLL QU2EST');
     expect(await grqv1.symbol()).to.equal('GRQ');
   });
+
+  describe("Transactions", function() {
+    it("Should transfer tokens between accounts", async function() {
+      const [owner, addr1, addr2] = await ethers.getSigners();
+  
+      // Transfer 50 tokens from owner to addr1
+      await grqv1.transfer(addr1.address, 50);
+      expect(await grqv1.balanceOf(addr1.address)).to.equal(50);
+  
+      // Transfer 50 tokens from addr1 to addr2
+      await grqv1.connect(addr1).transfer(addr2.address, 50);
+      expect(await grqv1.balanceOf(addr2.address)).to.equal(50);
+      expect(await grqv1.balanceOf(addr1.address)).to.equal(0);
+    });
+  });
+  
 });
