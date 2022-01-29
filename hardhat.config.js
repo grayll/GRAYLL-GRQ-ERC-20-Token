@@ -4,6 +4,7 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require('@openzeppelin/hardhat-upgrades');
+require("hardhat-gas-reporter");
 require('dotenv').config()
 
 const {
@@ -11,6 +12,7 @@ const {
   ETHSCAN_KEY,
   ALCHEMY_API_KEY_GOERLI,
   ALCHEMY_API_KEY_MAINNET,
+  COINMARKETCAP_API_KEY,
 } = process.env;
 
 module.exports = {
@@ -27,5 +29,10 @@ module.exports = {
   },
   etherscan: {
     apiKey: ETHSCAN_KEY
+  },
+  gasReporter: {
+    currency: 'USD',
+    gasPrice: 137,
+    coinmarketcap: COINMARKETCAP_API_KEY,
   }
 };
