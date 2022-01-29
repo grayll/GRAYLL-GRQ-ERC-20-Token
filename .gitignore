@@ -1,4 +1,5 @@
 build
 node_modules
-.secret
-.ethscanapi
+cache/
+artifacts/
+.env
