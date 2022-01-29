@@ -1,6 +1,8 @@
 const { ethers, upgrades } = require("hardhat");
 
 async function main() {
+  const [owner] = await ethers.getSigners();
+  console.log(owner.address)
   const GRQv1 = await ethers.getContractFactory("GRAYLLQU2EST");
   console.log("Deploying GRAYLLQU2EST...");
   const grqv1 = await upgrades.deployProxy(GRQv1, [], { initializer: 'initialize', kind: "uups" });
