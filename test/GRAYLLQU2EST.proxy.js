@@ -4,9 +4,9 @@ let GRQv1;
 let grqv1;
  
 // Start test block
-describe('GRAYLLQU2EST (proxy)', function () {
+describe('GRAYLL (proxy)', function () {
   beforeEach(async function () {
-    GRQv1 = await ethers.getContractFactory("GRAYLLQU2EST");
+    GRQv1 = await ethers.getContractFactory("GRAYLL");
     grqv1 = await upgrades.deployProxy(GRQv1, [], { initializer: 'initialize', kind: "uups" });
 
   });
@@ -17,7 +17,7 @@ describe('GRAYLLQU2EST (proxy)', function () {
     // Note that we need to use strings to compare the 256 bit integers
     // console.log(grqv1)
     expect((await grqv1.totalSupply()).toString()).to.equal('1000000000000000000000000000');
-    expect(await grqv1.name()).to.equal('GRAYLL QU2EST');
+    expect(await grqv1.name()).to.equal('GRAYLL');
     expect(await grqv1.symbol()).to.equal('GRQ');
   });
 

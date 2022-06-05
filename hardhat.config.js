@@ -16,7 +16,7 @@ const {
 } = process.env;
 
 module.exports = {
-  solidity: "0.8.11",
+  solidity: "0.8.9", // Solidity 0.8.11 is not fully supported yet. You can still use Hardhat, but some features, like stack traces, might not work correctly.
   networks: {
     goerli: {
       url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_API_KEY_GOERLI}`,
